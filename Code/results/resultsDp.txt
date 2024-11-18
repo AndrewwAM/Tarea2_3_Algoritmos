@@ -1,0 +1,460 @@
+From: dataset_s1_empty
+s1: 
+s2: 
+Result: 0
+From: dataset_s1_empty
+s1: 
+s2: m
+Result: 3
+From: dataset_s1_empty
+s1: 
+s2: rg
+Result: 6
+From: dataset_s1_empty
+s1: 
+s2: beg
+Result: 9
+From: dataset_s1_empty
+s1: 
+s2: wsmf
+Result: 12
+From: dataset_s1_empty
+s1: 
+s2: mvxmi
+Result: 10
+From: dataset_s1_empty
+s1: 
+s2: rojcsb
+Result: 18
+From: dataset_s1_empty
+s1: 
+s2: mqqybvb
+Result: 21
+From: dataset_s1_empty
+s1: 
+s2: kylzncvf
+Result: 24
+From: dataset_s1_empty
+s1: 
+s2: noyersjrq
+Result: 27
+From: dataset_s1_empty
+s1: 
+s2: sahculixrm
+Result: 30
+From: dataset_s1_empty
+s1: 
+s2: mbiswynaqnz
+Result: 33
+From: dataset_s1_empty
+s1: 
+s2: ojuclxsfybdl
+Result: 36
+From: dataset_s1_empty
+s1: 
+s2: aieftuebecvpw
+Result: 39
+From: dataset_s1_empty
+s1: 
+s2: khisocxtndhrrv
+Result: 42
+From: dataset_s1_empty
+s1: 
+s2: sdtpiosdrsuaqif
+Result: 45
+From: dataset_s1_empty
+s1: 
+s2: numpwjsddcmkwrpu
+Result: 48
+From: dataset_s1_empty
+s1: 
+s2: ikeqbzemveyusqwpp
+Result: 51
+From: dataset_s1_empty
+s1: 
+s2: njcwvvpnhjsudaxses
+Result: 36
+From: dataset_s1_empty
+s1: 
+s2: ortmlsoreismafwmanv
+Result: 57
+From: dataset_s1_empty
+s1: 
+s2: ontvijthkgxfrsrhdyju
+Result: 60
+From: dataset_s1_empty
+s1: 
+s2: clydqocjhmjghhbhgmopu
+Result: 63
+From: dataset_s1_empty
+s1: 
+s2: vwdppejpgsztxjgbtwleus
+Result: 44
+From: dataset_s2_empty
+s1: 
+s2: 
+Result: 0
+From: dataset_s2_empty
+s1: j
+s2: 
+Result: 4
+From: dataset_s2_empty
+s1: id
+s2: 
+Result: 8
+From: dataset_s2_empty
+s1: yht
+s2: 
+Result: 9
+From: dataset_s2_empty
+s1: cpdt
+s2: 
+Result: 12
+From: dataset_s2_empty
+s1: exjuy
+s2: 
+Result: 20
+From: dataset_s2_empty
+s1: azzzwg
+s2: 
+Result: 24
+From: dataset_s2_empty
+s1: umdvmpj
+s2: 
+Result: 28
+From: dataset_s2_empty
+s1: niaycgrh
+s2: 
+Result: 24
+From: dataset_s2_empty
+s1: zauipmdds
+s2: 
+Result: 27
+From: dataset_s2_empty
+s1: nyyzmyqedo
+s2: 
+Result: 30
+From: dataset_s2_empty
+s1: epcgxndkscl
+s2: 
+Result: 44
+From: dataset_s2_empty
+s1: tlqmeswzxsev
+s2: 
+Result: 48
+From: dataset_s2_empty
+s1: rfbmsknecqvzg
+s2: 
+Result: 52
+From: dataset_s2_empty
+s1: mtdgeporfyxhzd
+s2: 
+Result: 56
+From: dataset_s2_empty
+s1: gvpimxegnunykbe
+s2: 
+Result: 30
+From: dataset_s2_empty
+s1: vokvefavgannqxgk
+s2: 
+Result: 64
+From: dataset_s2_empty
+s1: cqbtrdhtnwhwzetvh
+s2: 
+Result: 51
+From: dataset_s2_empty
+s1: oygmbezfpqxgwvxakk
+s2: 
+Result: 72
+From: dataset_s2_empty
+s1: puifkdgusvlhrhxiokz
+s2: 
+Result: 76
+From: dataset_s2_empty
+s1: cxqppblbmfgpfrecxqic
+s2: 
+Result: 80
+From: dataset_s2_empty
+s1: kyidjwenjbwaxecovylcm
+s2: 
+Result: 84
+From: dataset_s2_empty
+s1: rrcirvjjqaprgjpajkxxlb
+s2: 
+Result: 88
+From: dataset_transposed
+s1: 
+s2: 
+Result: 0
+From: dataset_transposed
+s1: e
+s2: e
+Result: 0
+From: dataset_transposed
+s1: wd
+s2: dw
+Result: 2
+From: dataset_transposed
+s1: hoc
+s2: ohc
+Result: 4
+From: dataset_transposed
+s1: iykr
+s2: yirk
+Result: 8
+From: dataset_transposed
+s1: rbglu
+s2: brlgu
+Result: 8
+From: dataset_transposed
+s1: swqiud
+s2: wsiqdu
+Result: 11
+From: dataset_transposed
+s1: kbatiug
+s2: bktauig
+Result: 11
+From: dataset_transposed
+s1: dhbyslws
+s2: hdyblssw
+Result: 14
+From: dataset_transposed
+s1: pcsclevsa
+s2: cpcselsva
+Result: 13
+From: dataset_transposed
+s1: dnnxpvqmpi
+s2: ndxnvpmqip
+Result: 20
+From: dataset_transposed
+s1: nckpijohjtu
+s2: cnpkjihotju
+Result: 18
+From: dataset_transposed
+s1: trzqqkaecbqm
+s2: rtqzkqeabcmq
+Result: 20
+From: dataset_transposed
+s1: pqqvafdiwgtau
+s2: qpvqfaidgwatu
+Result: 24
+From: dataset_transposed
+s1: ixdmkwganzauwl
+s2: ximdwkagznualw
+Result: 28
+From: dataset_transposed
+s1: jqpodnirppqyccd
+s2: qjopndrippyqccd
+Result: 19
+From: dataset_transposed
+s1: gpzuswracqjnzjig
+s2: pguzwsarqcnjjzgi
+Result: 29
+From: dataset_transposed
+s1: cgtldunxryyjxqgqr
+s2: gcltudxnyrjyqxqgr
+Result: 28
+From: dataset_transposed
+s1: oaqgsbfeswnxdllcps
+s2: aogqbsefwsxnldclsp
+Result: 34
+From: dataset_transposed
+s1: ldvcqsmlxhqhbyaceng
+s2: dlcvsqlmhxhqybcaneg
+Result: 27
+From: dataset_transposed
+s1: irlrahqxbcmkjnxcgpnh
+s2: rirlhaxqcbkmnjcxpghn
+Result: 27
+From: dataset_transposed
+s1: vuibkuulaifhlebkkrwto
+s2: uvbiukluiahfelkbrktwo
+Result: 36
+From: dataset_transposed
+s1: yyxzdqkvheybgdidqgfpbb
+s2: yyzxqdvkehbydgdigqpfbb
+Result: 31
+From: dataset_fixed_s2
+s1: 
+s2: 
+Result: 0
+From: dataset_fixed_s2
+s1: h
+s2: amqyiqfonwxuowzpnymnfz
+Result: 47
+From: dataset_fixed_s2
+s1: hl
+s2: amqyiqfonwxuowzpnymnfz
+Result: 49
+From: dataset_fixed_s2
+s1: hlp
+s2: amqyiqfonwxuowzpnymnfz
+Result: 51
+From: dataset_fixed_s2
+s1: hlpr
+s2: amqyiqfonwxuowzpnymnfz
+Result: 51
+From: dataset_fixed_s2
+s1: hlprb
+s2: amqyiqfonwxuowzpnymnfz
+Result: 51
+From: dataset_fixed_s2
+s1: hlprbf
+s2: amqyiqfonwxuowzpnymnfz
+Result: 49
+From: dataset_fixed_s2
+s1: hlprbfa
+s2: amqyiqfonwxuowzpnymnfz
+Result: 51
+From: dataset_fixed_s2
+s1: hlprbfaf
+s2: amqyiqfonwxuowzpnymnfz
+Result: 53
+From: dataset_fixed_s2
+s1: hlprbfafl
+s2: amqyiqfonwxuowzpnymnfz
+Result: 55
+From: dataset_fixed_s2
+s1: hlprbfaflm
+s2: amqyiqfonwxuowzpnymnfz
+Result: 59
+From: dataset_fixed_s2
+s1: hlprbfaflml
+s2: amqyiqfonwxuowzpnymnfz
+Result: 63
+From: dataset_fixed_s2
+s1: hlprbfaflmls
+s2: amqyiqfonwxuowzpnymnfz
+Result: 65
+From: dataset_fixed_s2
+s1: hlprbfaflmlsy
+s2: amqyiqfonwxuowzpnymnfz
+Result: 68
+From: dataset_fixed_s2
+s1: hlprbfaflmlsyd
+s2: amqyiqfonwxuowzpnymnfz
+Result: 68
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydh
+s2: amqyiqfonwxuowzpnymnfz
+Result: 70
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhw
+s2: amqyiqfonwxuowzpnymnfz
+Result: 70
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwj
+s2: amqyiqfonwxuowzpnymnfz
+Result: 72
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwjz
+s2: amqyiqfonwxuowzpnymnfz
+Result: 71
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwjzh
+s2: amqyiqfonwxuowzpnymnfz
+Result: 74
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwjzhi
+s2: amqyiqfonwxuowzpnymnfz
+Result: 77
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwjzhir
+s2: amqyiqfonwxuowzpnymnfz
+Result: 79
+From: dataset_fixed_s2
+s1: hlprbfaflmlsydhwjzhire
+s2: amqyiqfonwxuowzpnymnfz
+Result: 81
+From: dataset_repeated_chars
+s1: 
+s2: 
+Result: 0
+From: dataset_repeated_chars
+s1: d
+s2: d
+Result: 0
+From: dataset_repeated_chars
+s1: rr
+s2: rr
+Result: 0
+From: dataset_repeated_chars
+s1: eee
+s2: eee
+Result: 0
+From: dataset_repeated_chars
+s1: xxxx
+s2: xxxx
+Result: 0
+From: dataset_repeated_chars
+s1: jjjjj
+s2: jjjjj
+Result: 0
+From: dataset_repeated_chars
+s1: nnnnnn
+s2: nnnnnn
+Result: 0
+From: dataset_repeated_chars
+s1: bbbbbbb
+s2: bbbbbbb
+Result: 0
+From: dataset_repeated_chars
+s1: pppppppp
+s2: pppppppp
+Result: 0
+From: dataset_repeated_chars
+s1: aaaaaaaaa
+s2: aaaaaaaaa
+Result: 0
+From: dataset_repeated_chars
+s1: cccccccccc
+s2: cccccccccc
+Result: 0
+From: dataset_repeated_chars
+s1: ppppppppppp
+s2: ppppppppppp
+Result: 0
+From: dataset_repeated_chars
+s1: zzzzzzzzzzzz
+s2: zzzzzzzzzzzz
+Result: 0
+From: dataset_repeated_chars
+s1: xxxxxxxxxxxxx
+s2: xxxxxxxxxxxxx
+Result: 0
+From: dataset_repeated_chars
+s1: zzzzzzzzzzzzzz
+s2: zzzzzzzzzzzzzz
+Result: 0
+From: dataset_repeated_chars
+s1: ddddddddddddddd
+s2: ddddddddddddddd
+Result: 0
+From: dataset_repeated_chars
+s1: wwwwwwwwwwwwwwww
+s2: wwwwwwwwwwwwwwww
+Result: 0
+From: dataset_repeated_chars
+s1: ggggggggggggggggg
+s2: ggggggggggggggggg
+Result: 0
+From: dataset_repeated_chars
+s1: aaaaaaaaaaaaaaaaaa
+s2: aaaaaaaaaaaaaaaaaa
+Result: 0
+From: dataset_repeated_chars
+s1: ooooooooooooooooooo
+s2: ooooooooooooooooooo
+Result: 0
+From: dataset_repeated_chars
+s1: aaaaaaaaaaaaaaaaaaaa
+s2: aaaaaaaaaaaaaaaaaaaa
+Result: 0
+From: dataset_repeated_chars
+s1: mmmmmmmmmmmmmmmmmmmmm
+s2: mmmmmmmmmmmmmmmmmmmmm
+Result: 0
+From: dataset_repeated_chars
+s1: ssssssssssssssssssssss
+s2: ssssssssssssssssssssss
+Result: 0

@@ -1,0 +1,169 @@
+
+%\epigraph{\textit{Dynamic programming is not about filling in tables. It's about smart recursion!}}{\citeauthor{algorithms_erickson}, \citeyear{algorithms_erickson} \cite{algorithms_erickson}}
+
+%\begin{enumerate}[1)]
+%    \item Describa la solución recursiva.
+%    \item Escriba la relación de recurrencia, incluyendo condiciones y casos base.
+%    \item Identifique subproblemas.
+%    \item Defina estructura de datos a utilizar y especifique el orden de calculo que realiza su programa que utiliza programación dinámica. 
+%\end{enumerate}
+
+\subsubsection{Descripción de la solución recursiva}
+Este enfoque se centra en hallar la solución óptima sin realizar recusión innecesaria. Para lograrlo, utlizaremos programación dinámica con el método bottom-up:
+precalcularemos las soluciones óptimas de los subproblemas de manera iterativa y lo almancenaremos en una matriz caché ($dp$). Como veremos en los siguientes puntos,
+el llenado de la tabla se hará según la relación de recurrencia para al finalizar poder encontrar el óptimo del problema original en la casilla con las mayores coordenadas.
+
+\subsubsection{Relación de recurrencia}
+
+\begin{equation}
+    dp_{s1,s2}(i,j)=\min\begin{cases}
+      0, & \text{if i = j = 0},\\
+      dp_{s1,s2}(i-1,j) + costDel(s1_{i}) & \text{if $i > 1$},\\
+      dp_{s1,s2}(i,j-1) + costIns(s2_{j}) & \text{if $j > 1$},\\
+      dp_{s1,s2}(i-1,j-1) + costSust(s1_{i},s2{j}) & \text{if $i,j > 1$},\\
+      dp_{s1,s2}(i-2,j-2) + costTrsp(s1_{i},s1_{i-1}) & \text{if $i,j > 1 $ and $ s1_{i} = s2_{j-1}$ and $s1_{i-1} = s2_{j}.$}
+    \end{cases}
+\end{equation}
+\subsubsection{Identificación de subproblemas}
+Cada subproblema se identifica por dos elementos, el último elemento de s1 y el último elemento de s2. Este enfoque busca resolver todos los posibles subproblemas 
+de manera creciente, es decir, empezando desde s1 y s2 sin elementos, pasando por s1 con i elementos y s2 con j elementos, hasta llegar al problema de s1 y s2 completos, 
+siendo esta la pregunta original.
+\subsubsection{Estructura de datos y orden de cálculo}
+La creación de la tabla $dp$ implica utilizar un arreglo bidimensional, es decir, un arreglo de arreglos y para la visualización de la tabla, vamos a considerar la esquina (0,0) como superior-izquierda. 
+
+Como pudimos ver en la relacion de recurrencia, la respuesta de cada problema es el óptimo entre 4 subproblemas menores. 
+Cada una de estas respuestas se encuentra arriba, a la izquierda o en diagonal superior-izquierda respecto a el problema actual, por lo que cada cálculo tiene como requisito que las casillas en esas direcciones ya tengan un valor asignado. Esto hace que, luego de rellenar los casos 
+base \textit{(fila 0 para s2 vacío y columna 0 para s1 vacío)}, podamos calcular cada casilla de izquierda a derecha y de arriba hacia abajo.
+\subsubsection{Algoritmo utilizando programación dinámica}
+
+
+
+\begin{algorithm}[H]
+    \SetKwProg{myproc}{Procedure}{}{}
+    \SetKwFunction{Dynamic}{dynamic}
+    \SetKwFunction{CostInsert}{costInsert}
+    \SetKwFunction{CostDelete}{costDelete}
+    \SetKwFunction{CostSubstitute}{costSubstitute}
+    \SetKwFunction{CostTranspose}{costTranspose}
+    
+    \DontPrintSemicolon
+    \footnotesize
+
+    \myproc{\Dynamic{s1, s2}}{
+        \tcp{Inicializa matriz de costos}
+        Crear matriz $dp$ de dimensiones (longitud(s1)+1) x (longitud(s2)+1)\;
+        \tcp{Rellenado de casos base}
+        $dp[0][0] \leftarrow 0$\;
+        \For{$i \leftarrow 1$ \KwTo longitud(s1)}{
+            $dp[i][0] \leftarrow i \times \CostDelete{s1[i-1]}$ \tcp*[r]{Costo de borrar lo que sobra de s1}
+        }
+        \For{$j \leftarrow 1$ \KwTo longitud(s2)}{
+            $dp[0][j] \leftarrow j \times \CostInsert{s2[j-1]}$ \tcp*[r]{Costo de insertar lo que falta de s2}
+        }
+
+        \For{$i \leftarrow 1$ \KwTo longitud(s1)}{
+            \For{$j \leftarrow 1$ \KwTo longitud(s2)}{
+                $costo_{del} \leftarrow dp[i-1][j] + \CostDelete{s1[i-1]}$\;
+                $costo_{ins} \leftarrow dp[i][j-1] + \CostInsert{s2[j-1]}$\;
+                $costo_{sub} \leftarrow dp[i-1][j-1] + \CostSubstitute{s1[i-1], s2[j-1]}$\;
+
+                $costo_{trans} \leftarrow \infty$\;
+                \uIf{i > 1 \textbf{ and } j > 1 \textbf{ and } s1[i-1] = s2[j-2] \textbf{ and } s1[i-2] = s2[j-1]}{
+                    $costo_{trans} \leftarrow dp[i-2][j-2] + \CostTranspose{s1[i-2], s1[i-1]}$\;
+                }
+                $dp[i][j] \leftarrow \min(costo_{del}, costo_{ins}, costo_{sub}, costo_{trans})$\;
+            }
+        }
+        
+        \Return $dp[\text{longitud(s1)}][\text{longitud(s2)}]$\;
+    }
+
+    \myproc{\CostInsert{b}}{
+        \Return costo de inserción para `$b$` \tcp*[r]{Función de costo de inserción}
+    }
+    \myproc{\CostDelete{a}}{
+        \Return costo de eliminación para `$a$` \tcp*[r]{Función de costo de eliminación}
+    }
+    \myproc{\CostSubstitute{a, b}}{
+        \Return costo de sustitución entre `$a$` y `$b$` \tcp*[r]{Función de costo de sustitución}
+    }
+    \myproc{\CostTranspose{a, b}}{
+        \Return costo de transposición entre `$a$` y `$b$` \tcp*[r]{Función de costo de transposición}
+    }
+    \caption{Algoritmo de Programación Dinámica para calcular la distancia mínima de edición}
+    \label{alg:dynamic_edit_distance}
+\end{algorithm}
+
+\subsubsection{Ejemplo de ejecución}
+Vamos a simular la ejecución del algoritmo diseñado con los datos de entrada s1: ``dog'' y s2: ``bag''.
+
+\textbf{1. Rellenamos los casos base}: Asumiendo que todos los costos de inserción = 1 y borrado = 2.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    0 & 2 & 4 & 6 \\ \hline
+    1 &   &   &   \\ \hline
+    2 &   &   &   \\ \hline
+    3 &   &   &   \\ \hline
+    \end{tabular}
+\end{table}
+
+\textbf{2. Rellenaremos una casilla no-base}: Seguiremos los pasos para rellenar (1,1)
+
+$i = 1, j = 1$
+
+
+
+\begin{tabbing}
+    $costo_{del} \leftarrow dp[i-1][j] + \CostDelete{s1[i-1]}$ = $costo_{del} \leftarrow 2 + 2$\;
+\end{tabbing}
+
+
+\begin{tabbing}
+    $costo_{ins} \leftarrow dp[i][j-1] + \CostInsert{s2[j-1]} $ = $ costo_{ins} \leftarrow 1 + 1$\;
+\end{tabbing}
+
+
+\begin{tabbing}
+    $costo_{sub} \leftarrow dp[i-1][j-1] + \CostSubstitute{s1[i-1], s2[j-1]}$ = $costo_{sub} \leftarrow 0 + 2$\;
+\end{tabbing}
+
+// Costo trans no lo contamos porque no cumple las condiciones
+
+$dp[1][1] \leftarrow \min(4, 2, 2)$ = $dp[1][1] \leftarrow 2$
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    0 & 2 & 4 & 6 \\ \hline
+    1 & 2 &   &   \\ \hline
+    2 &   &   &   \\ \hline
+    3 &   &   &   \\ \hline
+    \end{tabular}
+\end{table}
+
+Y así continuariamos con el rellenado de todas las tablas de izquierda a derecha y desde arriba hacia abajo. 
+El valor óptimo se encontrará en (3,3).
+
+
+\subsubsection{Complejidad temporal y espacial}
+La complejidad temporal de este algoritmo recae en el tiempo de rellenado de la tabla caché, lo que se realiza a través de dos ciclos \textit{for} anidados.
+Teniendo en cuenta que estos ciclos iteran sobre todos los subproblemas posibles, la complejidad temporal de resolver el problema 
+a través del algoritmo propuesto es de $O(n*m)$, con $n,m = \textit{tamaño s1 + 1 y tamaño s2 + 1}$, respectivamente. 
+\textit{Nótese que para n = m el algoritmo es $O(n^2)$, por lo que se podría decir que es, coloquialmente, un ``algoritmo cuadrático disfrazado''.}   
+
+En cuanto a la complejidad espacial, la memoria extra que se ocupa para esta solución es del tamaño de la tabla $dp$, por ende la complejidad espacial de este algoritmo
+es $O(n*m)$.
+
+
+\subsubsection{Inclusión de Transposición y costos variables}
+A diferencia del método de fuerza bruta, la acción extra de transponer no implica un gran impacto en la complejidad, ya que cada una de las operaciones posibles 
+dentro del problema tienen un costo de $O(1)$ utilizando este enfoque. Si bien es una mayor carga a que si tuvieramos solo 3 acciones, el impacto de 
+sumar una cuarta no es considerable dentro de esta implementación, por ende, a diferencia del anterior, este algoritmo no deberia tener grandes cambios en el tiempo de ejecución 
+con strings que permitan constantemente el uso de transposición.
+
+Los costos variables, al igual que en el enfoque anterior, no afectan directamente la complejidad, ya que cada valor se recuperaría en tiempo constante a través de las funciones 
+auxiliares.

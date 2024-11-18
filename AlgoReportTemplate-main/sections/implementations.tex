@@ -1,0 +1,33 @@
+Para llevar a cabo los experimentos y las mediciones se utilizaron programas en c++ para los algoritmos, auxiliados por scripts de python para la generación de las tablas de costo, 
+datasets, y gráficos en base a los resultados. Los programas se estructuran de la siguiente manera:
+
+\begin{itemize}
+    \item \textbf{main.cpp} : programa principal.
+    \item \textbf{Aux.hpp} : conjunto de funciones auxiliares, tanto para calcular los costos como para la lectura y escritura de archivos.
+    \item \textbf{utilities.hpp} : funciones para mostrar en la terminal el tiempo trasncurrido en cada prueba.
+    \item \textbf{BruteForce.hpp} : contiene el algoritmo de fuerza bruta, implementado en c++.
+    \item \textbf{dynamicSolution.hpp} : contiene el algoritmo de programación dinámica, implementado en c++.
+    \item \textbf{generateCosts.py} : script de python para generar las tablas de costo, se guardan en la carpeta \textit{costs}
+    \item \textbf{generateDatasets.py} : script de python para generar los datasets, se guardan en la carpeta \textit{datasets}
+    \item \textbf{generateImages.py} : script de python para generar los gráficos, se guardan en la carpeta \textit{imagenes}
+\end{itemize}
+
+Además de las carpetas detalladas previamente, deben existir dos carpetas adicionales: \textit{output} y \textit{results}. Asegúrese de que las rutas a 
+estas carpetas, así como a las previas, esten correctamente escritas dentro de \textbf{main.cpp} en la función main(), donde existen variables path para 
+este propósito. Las carpetas \textit{output} y \textit{results} almacenan los siguientes archivos:
+
+\begin{itemize}
+    \item \textbf{/output/outputDetailDp.txt} : archivo de texto que muestra los resultados de las pruebas del algoritmo de programación dinámica. Tiene un formato que facilita la 
+    legibilidad. 
+    \item \textbf{/output/outputDetailBf.txt} : archivo de texto que muestra los resultados de las pruebas del algoritmo de fuerza bruta. Tiene un formato que facilita la
+    legibilidad.
+    \item \textbf{/output/outputDp.txt} : archivo de texto que contiene los resultados de las mediciones del algoritmo de programación dinámica de manera comprimida.
+    \item \textbf{/output/outputBf.txt} : archivo de texto que contiene los resultados de las mediciones del algoritmo de fuerza bruta de manera comprimida. 
+    Estos dos últimos archivos son utilizados para hacer los gráficos mediante \textbf{generateImages.py}.
+    \item \textbf{/results/resultsBf.txt}
+    \item \textbf{/results/resultsDp.txt}
+\end{itemize}
+Los dos últimos archivos contienen, junto con sus inputs, los resultados de cada ejecución de los algoritmos correspondientes. Con estos dos archivos es posible comprobar
+que ambos algoritmos llegan a un resultado correcto.
+Es fundamental que si se quiere utilizar estos programas para la replicación de los experimentos se respete la estructura descrita, con el fin de evitar 
+medidas erróneas o fallos de ejecución.

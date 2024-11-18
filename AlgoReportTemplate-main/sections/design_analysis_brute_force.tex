@@ -1,0 +1,133 @@
+%\epigraph{\textit{``Indeed, brute force is a perfectly good technique in many cases; the real question is, can we use brute force in such a way that we avoid the worst-case behavior?''}}{--- \citeauthor{taocv3}, \citeyear{taocv3} \cite{taocv3}}
+
+\subsubsection{Descripción de la solución}
+Resolver el problema de distancia de edición utilizando el enfoque de fuerza bruta no tiene gran complejidad en su diseño.
+Buscamos igualar s1 a s2 probando todas las combinaciones posibles que surgen a partir de las 4 operaciones que dicta el problema.
+Para este ejemplo se compara recursivamente y de manera ascendente los elementos de s1 y s2 con ayuda de índices ($i$ y $j$).
+Por cada par de caracteres ubicados en s1[i] y s2[j], se evaluan en casos separados las cuatro acciones posibles a realizar
+con ambos elementos, agregando el costo relacionado con la operación. Cada caso representaría una \textit{``ruta''} por la cual se buscaría llegar a la solución.
+Luego de calcular cada uno de los casos, se escoje el de menor costo, retornando el costo óptimo de cada subtarea y, finalmente, el costo óptimo del problema original.
+\subsubsection{Algoritmo utilizando fuerza bruta}
+\begin{algorithm}[H]
+    \SetKwProg{myproc}{Procedure}{}{}
+    \SetKwFunction{BruteForce}{bruteForce}
+    \SetKwFunction{CostInsert}{costInsert}
+    \SetKwFunction{CostDelete}{costDelete}
+    \SetKwFunction{CostSubstitute}{costSubstitute}
+    \SetKwFunction{CostTranspose}{costTranspose}
+    
+    \DontPrintSemicolon
+    \footnotesize
+
+    \myproc{\BruteForce{s1, s2, i, j}}{
+        \uIf{i = longitud(s1) \textbf{ and } j = longitud(s2)}{
+            \Return 0  \tcp*[r]{Ambas cadenas están completas}
+        }
+        \uElseIf{i = longitud(s1)}{
+            \Return (\CostInsert{s2[j]} + \BruteForce{s1, s2, i, j + 1})  \tcp*[r]{Insertar restante de s2}
+        }
+        \uElseIf{j = longitud(s2)}{
+            \Return (\CostDelete{s1[i]} + \BruteForce{s1, s2, i + 1, j})  \tcp*[r]{Eliminar restante de s1}
+        }
+        
+        \tcp{Calcula el costo mínimo entre las operaciones posibles}
+        $costo_{del} \leftarrow \CostDelete{s1[i]} + \BruteForce{s1, s2, i + 1, j}$\;
+        $costo_{ins} \leftarrow \CostInsert{s2[j]} + \BruteForce{s1, s2, i, j + 1}$\;
+        $costo_{sub} \leftarrow \CostSubstitute{s1[i], s2[j]} + \BruteForce{s1, s2, i + 1, j + 1}$\;
+        
+        $costo_{trans} \leftarrow \infty$\;
+        \uIf{i + 1 $<$ largo s1 \textbf{ and } j + 1 $<$ largo s2 \textbf{ and } s1[i] = s2[j+1] \textbf{ and } s1[i+1] = s2[j]}{
+            $costo_{trans} \leftarrow \CostTranspose{s1[i], s1[i+1]} + \BruteForce{s1, s2, i + 2, j + 2}$\;
+            }
+            
+        \Return $\min(costo_{del}, costo_{ins}, costo_{sub}, costo_{trans})$\;
+    }
+
+    \myproc{\CostInsert{b}}{
+        \Return costo de inserción para `$b$` \tcp*[r]{Función de costo de inserción}
+    }
+    \myproc{\CostDelete{a}}{
+        \Return costo de eliminación para `$a$` \tcp*[r]{Función de costo de eliminación}
+    }
+    \myproc{\CostSubstitute{a, b}}{
+        \Return costo de sustitución entre `$a$` y `$b$` \tcp*[r]{Función de costo de sustitución}
+    }
+    \myproc{\CostTranspose{a, b}}{
+        \Return costo de transposición entre `$a$` y `$b$` \tcp*[r]{Función de costo de transposición}
+    }
+    \caption{Algoritmo de Fuerza Bruta para calcular la distancia mínima de edición}
+    \label{alg:bruteforce_edit_distance}
+\end{algorithm}
+
+
+\subsubsection{Ejemplo de ejecución}
+Vamos a simular la ejecución del algoritmo diseñado con los datos de entrada s1: ``dog'' y s2: ``bag''.
+
+\textbf{Paso 1:}:
+
+// Se checkea si es un caso base
+
+\begin{tabbing}
+    $costo_{del} \leftarrow \CostDelete{s1[i]} + \BruteForce{s1, s2, i + 1, j}$\;
+
+
+    \textbf{Vuelve al paso 1 con otros parámetros}:
+\end{tabbing}
+
+\begin{tabbing}
+    $costo_{ins} \leftarrow \CostInsert{s2[j]} + \BruteForce{s1, s2, i, j + 1}$\;
+
+
+    \textbf{Vuelve al paso 1 con otros parámetros}:
+\end{tabbing}
+
+\begin{tabbing}
+    $costo_{sub} \leftarrow \CostSubstitute{s1[i], s2[j]} + \BruteForce{s1, s2, i + 1, j + 1}$\;
+
+
+    \textbf{Vuelve al paso 1 con otros parámetros}:
+\end{tabbing}
+
+// Solo si es que se cumple la condición
+\begin{tabbing}
+    $costo_{trans} \leftarrow \CostTranspose{s1[i], s1[i+1]} + \BruteForce{s1, s2, i + 2, j + 2}$\;
+
+
+    \textbf{Vuelve al paso 1 con otros parámetros}:
+\end{tabbing}
+
+\textbf{Paso 2:}
+
+Al finalizar todas las llamadas recursivas se evaluan los resultados con:
+
+\begin{tabbing}
+    $\min(costo_{del}, costo_{ins}, costo_{sub}, costo_{trans})$
+\end{tabbing}
+
+y se retorna a la llamada anterior, para que esta \textbf{repita el paso 2} o en su defecto, retorne el valor a la llamada original, resolviendo el problema.
+
+
+\subsubsection{Complejidad temporal y espacial}
+En cada instancia de este algoritmo, este realiza al menos 3 llamadas recursivas a si mismo. La cuarta llamada ocurre en casos donde sea posible llevar a cabo esta operación, 
+por ende, tomando en cuenta esta situación como el peor caso, el algoritmo tendría 4 llamadas recursivas. 
+
+En caso de que un string sea mas largo que el otro, se llega a un caso base que, si bien tambien ejecuta una llamada
+recursiva, esta solo realizaría acciones de complejidad lineal, por lo que las llamadas recursivas masivas del algoritmo 
+\textbf{se detienen al alcanzar el tamaño del string más corto.} 
+
+Si tuvieramos que combinar $n$ elementos de 4 maneras distinas, tendríamos $4^n$ combinaciones, siguiendo
+este ejemplo y ya que este algoritmo evalúa todas las posibles combinaciones hasta el tamaño del string más pequeño, el enfoque fuerza bruta tiene 
+una complejidad temporal de $O(4^{\min(n,m)})$, con $n$ y $m$ los largos de s1 y s2, respectivamente. 
+
+En cuanto a la complejidad espacial, este algoritmo no ocupa ningún tipo de memoria adicional. Al ser in-place este tiene una complejidad espacial
+de $O(1)$.
+
+
+\subsubsection{Inclusión de Transposición y costos variables}
+La inclusión de la acción de transposición al problema original añade un grado mayor de complejidad al problema. Esto aumenta la cantidad de llamadas
+recursivas, empeorando considerablemente el rendimiento con respecto al problema sin esta opción. Los casos que presenten un mayor impacto debido a esta 
+complejidad extra son aquellos donde la acción de ``transponer'' sea posible para todo el string, forzando que en cada llamada al algoritmo se ejecuten 
+los 4 casos recursivos.
+
+Con respecto a los costos variables, estos no afectan directamente la complejidad, ya que cada valor se recuperaría en tiempo constante a través de las funciones 
+auxiliares.

@@ -1,0 +1,70 @@
+23
+0 0
+
+
+1 1
+e
+e
+2 2
+wd
+dw
+3 3
+hoc
+ohc
+4 4
+iykr
+yirk
+5 5
+rbglu
+brlgu
+6 6
+swqiud
+wsiqdu
+7 7
+kbatiug
+bktauig
+8 8
+dhbyslws
+hdyblssw
+9 9
+pcsclevsa
+cpcselsva
+10 10
+dnnxpvqmpi
+ndxnvpmqip
+11 11
+nckpijohjtu
+cnpkjihotju
+12 12
+trzqqkaecbqm
+rtqzkqeabcmq
+13 13
+pqqvafdiwgtau
+qpvqfaidgwatu
+14 14
+ixdmkwganzauwl
+ximdwkagznualw
+15 15
+jqpodnirppqyccd
+qjopndrippyqccd
+16 16
+gpzuswracqjnzjig
+pguzwsarqcnjjzgi
+17 17
+cgtldunxryyjxqgqr
+gcltudxnyrjyqxqgr
+18 18
+oaqgsbfeswnxdllcps
+aogqbsefwsxnldclsp
+19 19
+ldvcqsmlxhqhbyaceng
+dlcvsqlmhxhqybcaneg
+20 20
+irlrahqxbcmkjnxcgpnh
+rirlhaxqcbkmnjcxpghn
+21 21
+vuibkuulaifhlebkkrwto
+uvbiukluiahfelkbrktwo
+22 22
+yyxzdqkvheybgdidqgfpbb
+yyzxqdvkehbydgdigqpfbb

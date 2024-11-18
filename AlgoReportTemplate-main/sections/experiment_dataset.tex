@@ -1,0 +1,49 @@
+
+Los conjuntos de datos para probar el rendimiento de los algoritmos fueron diseñados para evaluar el comportamiento de estos bajo circunstancias específicas, casos de recursión poco comunes y tambien sus peores casos. 
+Los datasets escojidos fueron 5, sus nombres y características son los siguientes:
+
+\begin{itemize}
+    \item \textbf{dataset 1 : s1 vacío}: Dataset con s2 randomizado, mientras que s1 es siempre un string vacío.
+    \item \textbf{dataset 2 : s2 vacío}: Dataset con s1 randomizado, mientras que s2 es siempre un string vacío.
+    \item \textbf{dataset 3 : transposed}: Dataset con s1 y s2 del mismo tamaño, s2 randomizado y s1 se construye transponiendo de a pares los elementos de s2.
+    \item \textbf{dataset 4 : repeated chars}: Dataset con s1 y s2 del mismo tamaño, ambos strings son iguales y estan compuestos por un único caracter repetido.
+    \item \textbf{dataset 5 : s2 fijo}: Dataset con s2 determinado y de tamaño máximo en todos los casos de prueba, s1 es un string determinado al cual se le van agregando 
+    sus caracteres progresivamente.
+\end{itemize}
+
+Todos los datasets siguen un formato: la primera linea es un entero \textit{C} que representa cuantos casos de prueba contiene el archivo, seguido de \textit{C} casos de prueba los 
+cuales se componen de dos enteros \textit{n} y \textit{m} separados por un espacio que representan el largo de s1 y s2, respectivamente. Seguido de esto vienen los strings s1 y s2 en lineas diferentes, para 
+luego pasar al siguiente caso de prueba.
+
+Todo string que no esté fijado por características del dataset va a ir aumentando de tamaño progresivamente, desde 0 (vacío) hasta 22, debido a que son 23 casos de prueba en total, contando los strings vacíos. Es importante destacar que 
+el algoritmo de fuerza bruta es incapaz de procesar ese tamaño de entrada, por lo que su ejecución en estos experimentos fue limitada hasta strings de tamaño 15 dentro de cada dataset. (ajuste que puede ser cambiado 
+dentro de \textbf{main.cpp}).
+
+A continuación se detallan algunos de los casos de pruebas utilizados, junto con su solución óptima:
+
+\textbf{dataset 1; caso 5:} s1: ``'', s2: wsmf, Costo: 12
+
+(3) Ins w in 0 $\rightarrow$ (2) Ins s in 1 $\rightarrow$ (3) Ins m in 2 $\rightarrow$ (3) Ins f in 3
+
+\textbf{dataset 2; caso 5:} s1: cpdt, s2: ``'', Costo: 15
+
+(4) Del c $\rightarrow$ (4) Del p $\rightarrow$ (4) Del d $\rightarrow$ (3) Del t 
+
+\textbf{dataset 3; caso 8:} s1: kbatiug, s2: bktauig, Costo 11
+
+(4) Transp b,k $\rightarrow$ (4) Transp t,a $\rightarrow$ (3) Transp u,i
+
+\textbf{dataset 4; caso 12:} s1: zzzzzzzzzzzz, s2: zzzzzzzzzzzz, Costo: 0
+
+(0) Transp p,p $\rightarrow$ (0) Transp p,p $\rightarrow$ (0) Transp p,p $\rightarrow$ (0) Transp p,p $\rightarrow$ (0) Transp p,p
+
+\textbf{dataset 5; caso 5:} s1: hlpr, s2: amqyiqfonwxuowzpnymnfz, Costo: 51
+
+(2) Ins a in 0 $\rightarrow$ (3) Ins m in 1 $\rightarrow$ (3) Ins q in 2 $\rightarrow$ (3) Ins y in 3 $\rightarrow$ (2) Ins i in 4 $\rightarrow$ (3) Ins q in 5 
+
+$\rightarrow$ (3) Ins f in 6 $\rightarrow$ (2) Ins o in 7 $\rightarrow$ 
+(2) Sust n,h $\rightarrow$ (3) Ins w in 9 $\rightarrow$ (3) Ins x in 10 $\rightarrow$ (3) Sust u,l 
+
+$\rightarrow$ (2) Ins o in 12 $\rightarrow$ (3) Ins w in 13 $\rightarrow$ (3) Ins z in 14 $\rightarrow$ (2) Ins n in 15 $\rightarrow$ (3) Ins y in 16 
+
+$\rightarrow$ (3) Ins m in 17 $\rightarrow$ (2) Ins n in 18 $\rightarrow$ (3) Sust f,r $\rightarrow$ (3) Ins z in 20  

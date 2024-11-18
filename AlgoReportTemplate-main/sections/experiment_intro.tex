@@ -1,0 +1,32 @@
+
+La realización de los experimentos detallados en esta sección fue llevada a cabo bajo las siguientes condiciones:
+
+\begin{itemize}
+    \item Hardware:
+    \subitem CPU: Ryzen 5 1600, 3.2GHz
+    \subitem RAM: 24GB DDR4 2400MHz
+    \subitem Almacenamiento: SSD 512GB
+    \item Software:
+    \subitem {SO: Nobara Linux 40 (KDE Plasma) x86$\_$64}
+    \subitem Compilador: g++ 14.2.1
+    \subitem Python: 3.12.6
+    \subitem Librerías de Python:
+    \subsubitem Pandas, Seaborn, matplotlib, Pathlib, Math, Numpy
+
+\end{itemize}
+
+Previo a la realización de las pruebas se cumplieron todos los requisitos para el correcto funcionamiento de los programas 
+explicado en la sección anterior. Para ello se poblaron los archivos de costos de operación mediante \textbf{generateCosts.py}.
+
+El problema que buscamos resolver corresponde a la \textit{Distancia de Damerau-Levenshtein} [cita], la cual es frecuentemente usada 
+para resolver problemas como el \textit{funcionamiento del autocorrector de un teclado} [cita]. Por ello, para acercarnos a un escenario 
+real las tablas de costo se poblaron sus valores asociados según que tan comunes son en el diccionario inglés y que tan probable es un error de typeo 
+en función de la distancia entre caracteres en un teclado QWERTY. Esta forma de ajustar los costos determina la forma en la que se reconstruye la 
+solución óptima, más no afecta los tiempos de ejecución ni el uso de memoria, los que solo dependen del algoritmo ejecutado y 
+las características de los strings de entrada, las cuales dependen de cada dataset. Estos últimos fueron generados mediante \textbf{generateDatasets.py}. 
+Las características de cada uno de los datasets se detallan en la siguiente sección.
+
+Cada prueba se llevó a cabo utilizando el programa principal. Cada uno de los casos de prueba se ejecutó 4 veces, midiendo el tiempo de ejecución, el uso de memoria y guardando el resultado. 
+Las últimas 3 fueron tomadas en cuenta a la hora de promediar para calcular los valores finales. La primera usa para realizar cualquier tipo de carga de caché que vaya a realizar el programa.
+
+\pagebreak

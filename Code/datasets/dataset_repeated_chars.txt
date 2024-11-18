@@ -1,0 +1,70 @@
+23
+0 0
+
+
+1 1
+d
+d
+2 2
+rr
+rr
+3 3
+eee
+eee
+4 4
+xxxx
+xxxx
+5 5
+jjjjj
+jjjjj
+6 6
+nnnnnn
+nnnnnn
+7 7
+bbbbbbb
+bbbbbbb
+8 8
+pppppppp
+pppppppp
+9 9
+aaaaaaaaa
+aaaaaaaaa
+10 10
+cccccccccc
+cccccccccc
+11 11
+ppppppppppp
+ppppppppppp
+12 12
+zzzzzzzzzzzz
+zzzzzzzzzzzz
+13 13
+xxxxxxxxxxxxx
+xxxxxxxxxxxxx
+14 14
+zzzzzzzzzzzzzz
+zzzzzzzzzzzzzz
+15 15
+ddddddddddddddd
+ddddddddddddddd
+16 16
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+17 17
+ggggggggggggggggg
+ggggggggggggggggg
+18 18
+aaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaa
+19 19
+ooooooooooooooooooo
+ooooooooooooooooooo
+20 20
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+21 21
+mmmmmmmmmmmmmmmmmmmmm
+mmmmmmmmmmmmmmmmmmmmm
+22 22
+ssssssssssssssssssssss
+ssssssssssssssssssssss
